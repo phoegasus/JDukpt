@@ -10,6 +10,13 @@ public class Test {
 		String data = "0412646667ACFEC9";
 		Crypto crypto = new CryptoImpl();
 		JDukpt jdukpt = new JDukpt(crypto);
-		System.out.println(jdukpt.encryptPIN(key, ksn, data).toUpperCase());
+		String decPin = jdukpt.encryptPIN(key, ksn, data).toUpperCase();
+		System.out.println(decPin);
+		String encPin = jdukpt.decryptPIN(key, ksn, decPin).toUpperCase();
+		System.out.println(encPin);
+		String decData = jdukpt.encryptData(key, ksn, data).toUpperCase();
+		System.out.println(decData);
+		String encData = jdukpt.decryptData(key, ksn, decData).toUpperCase();
+		System.out.println(encData);
 	}
 }
