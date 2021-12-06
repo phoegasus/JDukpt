@@ -35,9 +35,9 @@ public interface Crypto {
 	
 	/**
 	 * Client implementation of TripleDES encryption
-	 * @param key Decryption Key
-	 * @param data Data to decrypt
-	 * @return Decrypted data
+	 * @param key Encryption Key
+	 * @param data Data to encrypt
+	 * @return Encrypted data
 	 * @throws Exception
 	 */
 	BigInteger encryptTDES(BigInteger key, BigInteger data) throws Exception;
