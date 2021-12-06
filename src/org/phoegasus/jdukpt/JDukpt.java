@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 /**
  * Provides methods for DUKPT cryptographic operations. Client should provide their implementation of the Crypto interface to the constructor.
- * @author Phoegasus
+ * @author Omar Lakhlifi
  * @version 1.0.0
  * @since 1.0.0
  * @see <a href="https://github.com/phoegasus/JDukpt">https://github.com/phoegasus/JDukpt</a>
@@ -152,7 +152,9 @@ public class JDukpt {
             throw new IllegalArgumentException("hexData is null or empty");
         }
         
-        return encrypt(new BigInteger(bdk, 16), new BigInteger(ksn, 16), new BigInteger(data, 16), variant).toString(16);
+        int length = data.length();
+        
+        return StringPadder.lPad(encrypt(new BigInteger(bdk, 16), new BigInteger(ksn, 16), new BigInteger(data, 16), variant).toString(16), '0', length % 16 != 0 ? length + (16 - length % 16) : length);
 	}
 
 	/**
@@ -221,7 +223,9 @@ public class JDukpt {
             throw new IllegalArgumentException("hexData is null or empty");
         }
         
-        return decrypt(new BigInteger(bdk, 16), new BigInteger(ksn, 16), new BigInteger(data, 16), variant).toString(16);
+        int length = data.length();
+        
+        return StringPadder.lPad(decrypt(new BigInteger(bdk, 16), new BigInteger(ksn, 16), new BigInteger(data, 16), variant).toString(16), '0', length % 16 != 0 ? length + (16 - length % 16) : length);
 	}
 
 	/**

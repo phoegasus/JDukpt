@@ -1,4 +1,4 @@
-package example;
+package org.phoegasus.jdukpt;
 
 public class StringPadder {
 	
