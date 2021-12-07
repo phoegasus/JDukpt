@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 /**
  * Provides methods for DUKPT cryptographic operations. Client should provide their implementation of the Crypto interface to the constructor.
- * @author Omar Lakhlifi
+ * @author Phoegasus
  * @version 1.0.0
  * @since 1.0.0
  * @see <a href="https://github.com/phoegasus/JDukpt">https://github.com/phoegasus/JDukpt</a>
