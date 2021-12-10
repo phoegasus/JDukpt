@@ -11,8 +11,6 @@ public class StringPadder {
 	/**
 	 * Pads the source string to the left with zeroes until the length is a multiple of 16.
 	 * @param source Source string
-	 * @param paddingCharacter Padding character
-	 * @param desiredLength Length of the result
 	 * @return Left padded string
 	 */
 	public static String zeroLeftPadToMultipleOf16(String source) {

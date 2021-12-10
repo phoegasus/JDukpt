@@ -79,7 +79,7 @@ class JDukptCore {
 	 * Create Session Key
 	 * @param bdk Base Derivation Key
 	 * @param ksn Key Serial Number
-	 * @param DUKPTVariant DUKPT variant used to determine session key creation method
+	 * @param variant DUKPT variant used to determine session key creation method
 	 * @return Session Key
 	 * @throws Exception thrown by the Crypto implementation
 	 */
