@@ -11,9 +11,7 @@ A Java implementation of [Dukpt.NET](https://github.com/sgbj/Dukpt.NET).
 This is a Java implementation of [Dukpt.NET](https://github.com/sgbj/Dukpt.NET),
 > a C# implementation of the Derived Unique Key Per Transaction (DUKPT) process that's described in Annex A of ANS X9.24-2004.
 
-For people who can't or won't pay 140$ for the ANS X9.24-2004 (and for those who do). 
-
-Supports byte array and string data.
+For people who can't or won't pay 140$ for the ANS X9.24-2004 (and for those who do).
 
 If you implement this in a different programming language, please consider sharing it with the community.
 
@@ -26,6 +24,18 @@ If you implement this in a different programming language, please consider shari
 
 ## How to use
 
- The client should implement the `Crypto` interface, providing their implementation of DES and 3DES encryption and decryption. An instance of the implementing class should be passed as an argument to the `JDukpt` constructor.
- 
-A working example is provided in the `example`  package.
+Instanciate the JDukpt class and call the appropriate method. 
+
+`JDukpt jdukpt = new JDukpt();
+
+jdukpt.encryptPIN(bdk, ksn, data);
+jdukpt.decryptPIN(bdk, ksn, encryptedData);
+jdukpt.encryptData(bdk, ksn, data);
+jdukpt.decryptData(bdk, ksn, encryptedData);`
+
+The parameters and return value are either String, byte[], or BigInteger.
+
+You can provide your own DES and 3DES implementation by implementing the Crypto interface, and providing it as an argument to the JDukpt constructor.
+`Crypto crypto = new MyCryptoImpl();
+
+JDukpt jdukpt = new JDukpt(crypto);`
