@@ -26,16 +26,16 @@ If you implement this in a different programming language, please consider shari
 
 Instanciate the JDukpt class and call the appropriate method. 
 
-`JDukpt jdukpt = new JDukpt();
+``JDukpt jdukpt = new JDukpt();
 
 jdukpt.encryptPIN(bdk, ksn, data);
 jdukpt.decryptPIN(bdk, ksn, encryptedData);
 jdukpt.encryptData(bdk, ksn, data);
-jdukpt.decryptData(bdk, ksn, encryptedData);`
+jdukpt.decryptData(bdk, ksn, encryptedData);``
 
 The parameters and return value are either String, byte[], or BigInteger.
 
 You can provide your own DES and 3DES implementation by implementing the Crypto interface, and providing it as an argument to the JDukpt constructor.
-`Crypto crypto = new MyCryptoImpl();
+``Crypto crypto = new MyCryptoImpl();
 
-JDukpt jdukpt = new JDukpt(crypto);`
+JDukpt jdukpt = new JDukpt(crypto);``
