@@ -30,7 +30,7 @@ class DES {
 		if(key.length == 16) {
 			ByteBuffer bb = ByteBuffer.wrap(new byte[24]);
 			bb.put(key, 0, 16);
-			bb.put(16, key, 0, 8);
+			bb.put(key, 0, 8);
 			key = bb.array();
 		}
 

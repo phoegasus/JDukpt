@@ -167,4 +167,37 @@ public class JDukpt {
 	public BigInteger decryptData(BigInteger bdk, BigInteger ksn, BigInteger data) throws Exception {
 		return core.decrypt(bdk, ksn, data, DUKPTVariant.Data);
 	}
+	
+	/**
+	 * Generate the IPEK from the BDK and KSN
+	 * @param bdk Base Derivation Key
+	 * @param ksn Key Serial Number
+	 * @return IPEK
+	 * @throws Exception thrown by the Crypto implementation
+	 */
+	public BigInteger generateIpek(BigInteger bdk, BigInteger ksn) throws Exception {
+		return core.createIpek(ksn, bdk);
+	}
+	
+	/**
+	 * Derive the PIN encryption key from the BDK and KSN
+	 * @param bdk Base Derivation Key
+	 * @param ksn Key Serial Number
+	 * @return PIN encryption key
+	 * @throws Exception thrown by the Crypto implementation
+	 */
+	public BigInteger derivePINEncryptionKey(BigInteger bdk, BigInteger ksn) throws Exception {
+		return core.createSessionKey(ksn, bdk, DUKPTVariant.PIN);
+	}
+	
+	/**
+	 * Derive the Data encryption key from the BDK and KSN
+	 * @param bdk Base Derivation Key
+	 * @param ksn Key Serial Number
+	 * @return Data encryption key
+	 * @throws Exception thrown by the Crypto implementation
+	 */
+	public BigInteger deriveDataEncryptionKey(BigInteger bdk, BigInteger ksn) throws Exception {
+		return core.createSessionKey(ksn, bdk, DUKPTVariant.Data);
+	}
 }
